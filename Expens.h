@@ -6,8 +6,6 @@
 #include <Windows.h>
 
 
-
-
 using namespace std;
 
 
@@ -19,6 +17,7 @@ struct Data
 	Data(string a);
 
 };
+
 
 
 /// <summary>
@@ -53,3 +52,50 @@ public:
 
 };
 
+/// <summary>
+/// Списание средств
+/// </summary>
+/// <typeparam name="Type - шаблон нашего класса"></typeparam>
+/// <param name="t - класс"></param>
+template <typename Type>
+void Spisanie(Type t, deque < Expenses>& massiv_Expenses)
+{
+	int sum1 = 0;
+	string dataUser;
+	string zatrat1;
+	string cost;
+	cout << "цена" << endl;
+	cin >> sum1;
+	cout << "дата" << endl;
+	cin >> dataUser;
+
+	cout << "Категория затрат" << endl;
+	cin >> cost;
+
+	cout << "затратa" << endl;
+	cin >> zatrat1;
+
+	Expenses exz{ sum1, dataUser, zatrat1, cost };
+	massiv_Expenses.push_back(exz);
+	t.Spisanie(sum1);
+
+
+}
+
+/// <summary>
+/// Списание средств
+/// </summary>
+/// <typeparam name="Type - шаблон класса"></typeparam>
+/// <param name="t - класс"></param>
+/// <param name="sum1 - сумма"></param>
+/// <param name="dataUser - дата"></param>
+/// <param name="zatrat1 - категория затрат"></param>
+template <typename Type>
+void Spisanie(Type& t, int sum1, string dataUser, string zatrat1, string cost, deque < Expenses>& massiv_Expenses)
+{
+
+	Expenses exz{ sum1, dataUser, zatrat1,cost };
+	massiv_Expenses.push_back(exz);
+	t.Spisanie(sum1);
+
+}

@@ -2,55 +2,10 @@
 
 #include "Cards.h"
 #include "Func.h"
-
 #include <map>
 
-/// <summary>
-/// Списание средств
-/// </summary>
-/// <typeparam name="Type - шаблон класса"></typeparam>
-/// <param name="t - класс"></param>
-/// <param name="sum1 - сумма"></param>
-/// <param name="dataUser - дата"></param>
-/// <param name="zatrat1 - категория затрат"></param>
-template <typename Type>
-void Spisanie(Type& t, int sum1, string dataUser, string zatrat1, string cost, deque < Expenses>& massiv_Expenses)
-{
-
-	Expenses exz{ sum1, dataUser, zatrat1,cost };
-	massiv_Expenses.push_back(exz);
-	t.Spisanie(sum1);
-
-}
-/// <summary>
-/// Списание средств
-/// </summary>
-/// <typeparam name="Type - шаблон нашего класса"></typeparam>
-/// <param name="t - класс"></param>
-template <typename Type>
-void Spisanie(Type t, deque < Expenses>& massiv_Expenses)
-{
-	int sum1 = 0;
-	string dataUser;
-	string zatrat1;
-	string cost;
-	cout << "цена" << endl;
-	cin >> sum1;
-	cout << "дата" << endl;
-	cin >> dataUser;
-
-	cout << "Категория затрат" << endl;
-	cin >> cost;
-
-	cout << "затратa" << endl;
-	cin >> zatrat1;
-
-	Expenses exz{ sum1, dataUser, zatrat1, cost };
-	massiv_Expenses.push_back(exz);
-	t.Spisanie(sum1);
 
 
-}
 
 
 int main()
@@ -58,7 +13,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	system("mode con cols=62 lines=35");
+	system("mode con cols=66 lines=35");
 	system("color 70");
 
 	deque < Expenses> massiv_Expenses;
@@ -69,7 +24,7 @@ int main()
 	DebCart Alfa({ "Igor",785487154845,1505421,010 }, 100500, 2025, 25000);
 
 
-	while (1 != 0)
+	while (true)
 	{
 		
 
