@@ -12,7 +12,17 @@
 		M = MM;
 		Y = YY;
 	}
-
+	void Data::DataCheck(Data a)
+	{
+		if (a.D > 31)
+		{
+			throw D;
+		}
+		if (a.M > 12)
+		{
+			throw M;
+		}
+	}
 
 
 
